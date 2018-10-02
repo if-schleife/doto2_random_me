@@ -326,52 +326,44 @@ int main()
 		}
 
 
-		/*
-
-		filter[STRING][1] = 1;
-		filter[STRING][6] = 1;
-
-		*/
+		
 
 
 		int rngcnt = -1;
 		for (int i = 0; i < STRING; i++) {
 			if ((filter[i][0] && filter[STRING][0]) || (filter[i][1] && filter[STRING][1]) ||
 				(filter[i][2] && filter[STRING][2]) || (filter[i][3] && filter[STRING][3]) ||
-				(filter[i][4] && filter[STRING][4]) || (filter[i][5] && filter[STRING][5]))
+				(filter[i][4] && filter[STRING][4]) || (filter[i][5] && filter[STRING][5]) ||
+				(filter[STRING][6])     )
 			{
 
 				random[++rngcnt] = i;
 				if (filter[i][6] == 1) {
 					random[++rngcnt] = i;
-
 				}
-				//cout << heros[i] << endl;
+				
 			}
 		}
-		/*
-		cout << endl << endl;
-		for (int  i = 0; i <= rngcnt; i++)
-		{
-			cout << random[i] << "    " ;
-		}
-		cout << endl << endl;
-		*/
-
-		if (rngcnt <= 0) {
-			cout << "Keinen Helden gefunden, spiel TECHIES!";
-			cin >> cincin;
-		}
-
-		int rngrng = 0;
-		rngrng = rand() % (rngcnt)+0;
+		
 
 
-		//cout << "zufallswert  " << rngrng << endl << endl;//
+			int rngrng = 0;
 
-		rngrng = random[rngrng];
+			if (rngcnt <= 0) {
+				cout <<endl<< "Alright, allRandom!";
+				
+				rngrng= rand() % STRING;
+			}
+			else{
+			
+			rngrng = rand() % (rngcnt)+0;
+			rngrng = random[rngrng];
 
-		cout << endl << "   " << heros[rngrng] << endl;
+			}
+			cout << endl << "   " << heros[rngrng] << endl<< endl;
+			
+
+
 		int reroll = 2;
 
 
@@ -383,9 +375,19 @@ int main()
 				cout << endl << endl;
 				break;
 			}
-			rngrng = rand() % (rngcnt)+0;
-			rngrng = random[rngrng];
-				cout << endl << "   " << heros[rngrng] << endl;
+			
+			if (rngcnt <= 0) {
+				cout <<endl<< "Alright, allRandom!";
+
+				rngrng = rand() % STRING;
+			}
+			else {
+
+				rngrng = rand() % (rngcnt)+0;
+				rngrng = random[rngrng];
+
+			}
+			cout << endl << "   " << heros[rngrng] << endl << endl;
 
 		}
 
@@ -404,4 +406,3 @@ int main()
 	cin >> cincin;
     return 0;
 }
-
