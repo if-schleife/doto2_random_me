@@ -16,4 +16,15 @@ Disclamer, Iam a 2k Scrub and the next big patch is pretty close (I hope so).
 So if you are not happy with my decisions about which hero is playing which position,
 you can easily change all of the parameters in the bool filter[][].
 
+
+
+PURE RANDOM: just press 2 at the first question.
+
+
+
+
+
+
+
+
 Disclamer#2, Iam not the owner of the hero names, Copyright by Valve.
